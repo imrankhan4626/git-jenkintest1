@@ -3,7 +3,9 @@ pipeline{
     stages{
         stage(test) {
             steps{
-                sh "khan.sh"
+                echo "BASH"
+                sh "pwd"
+                SH "chmod 777 ./khan.sh && ./khan.sh"
             }
         }
     }
