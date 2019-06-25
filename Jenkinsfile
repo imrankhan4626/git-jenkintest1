@@ -5,7 +5,7 @@ pipeline{
             steps{
                 echo "BASH"
                 sh "pwd"
-                SH "chmod 777 ./khan.sh && ./khan.sh"
+                sh "chmod 777 ./khan.sh && ./khan.sh"
             }
         }
     }
