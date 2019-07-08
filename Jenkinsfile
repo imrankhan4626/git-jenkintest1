@@ -4,8 +4,7 @@ pipeline{
         stage(test) {
             steps{
                 echo "BASH"
-                sh "pwd"
-                SH "chmod 777 ./khan.sh && ./khan.sh"
+                sh "docker build -t test ."
             }
         }
     }
