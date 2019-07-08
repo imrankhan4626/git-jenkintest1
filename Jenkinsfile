@@ -4,7 +4,7 @@ pipeline{
         stage(test) {
             steps{
                 echo "BASH"
-                sh "docker build -t test ."
+                sh "sudo docker build -t test ."
             }
         }
     }
