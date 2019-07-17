@@ -1,7 +1,13 @@
+#ADD JAVA repo
+RUN add-apt-repository ppa:webupd8team/java \
+&& apt-get update && apt-get install -y curl \
+ python-software-properties \
+ software-properties-common 
 FROM ubuntu
 
 #ADD JAVA repo
-RUN add-apt-repository ppa:webupd8team/java && apt-get update && apt-get install -y curl \
+RUN add-apt-repository ppa:webupd8team/java \
+ apt-get update && apt-get install -y curl \
  python-software-properties \
  software-properties-common 
 
@@ -24,5 +30,3 @@ ENV JAVA_OPTS -server -XX:+DisableExplicitGC -XX:+UserConcMarKSweepGC \
 
 WORKDIR /opt/tomcat
 CMD ["bin/catalina.sh","run"]
- 
-
