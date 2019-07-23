@@ -1,15 +1,10 @@
-#ADD JAVA repo
-RUN add-apt-repository ppa:webupd8team/java \
-&& apt-get update && apt-get install -y curl \
- python-software-properties \
- software-properties-common 
 FROM ubuntu
 
 #ADD JAVA repo
-RUN add-apt-repository ppa:webupd8team/java \
- apt-get update && apt-get install -y curl \
+RUN apt-get update && apt-get install -y curl \
  python-software-properties \
- software-properties-common 
+ software-properties-common \
+ && add-apt-repository ppa:webupd8team/java
 
 #Installa java
 RUN echo debconf shared/accepted-oracle-license-v1-1select true | debconf-set-selections \
@@ -30,3 +25,4 @@ ENV JAVA_OPTS -server -XX:+DisableExplicitGC -XX:+UserConcMarKSweepGC \
 
 WORKDIR /opt/tomcat
 CMD ["bin/catalina.sh","run"]
+ 
