@@ -2,8 +2,8 @@ FROM ubuntu
 
 #ADD JAVA repo
 RUN apt-get update && apt-get install -y curl \
+ software-properties-common\
  python-software-properties \
- software-properties-common \
  && add-apt-repository ppa:webupd8team/java
 
 #Installa java
