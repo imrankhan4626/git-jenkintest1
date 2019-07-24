@@ -2,9 +2,8 @@ FROM ubuntu
 
 #ADD JAVA repo
 RUN apt-get update && apt-get install -y curl \
- software-properties-common \
- && add-apt-repository ppa:webupd8team/java
-
+ add-apt-repository ppa:webupd8team/java \
+ 
 #Installa java
 RUN echo debconf shared/accepted-oracle-license-v1-1select true | debconf-set-selections \
  && echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections \
